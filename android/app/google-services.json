@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "998515854717",
+    "project_id": "planetmessage-79299",
+    "storage_bucket": "planetmessage-79299.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:998515854717:android:9914ab730bfacbc58b9014",
+        "android_client_info": {
+          "package_name": "com.arunita.chatting"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "998515854717-aodubc2g3fk4qv7hs0ihp5c3f8ei2epr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7gOZyMxS8a8WzhW8cNnQUOm4e8ghiFvY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "998515854717-aodubc2g3fk4qv7hs0ihp5c3f8ei2epr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
