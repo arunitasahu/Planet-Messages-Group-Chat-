@@ -5,17 +5,18 @@ import 'chat_screen.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
 class RegistrationScreen extends StatefulWidget {
-  static String id ='registration_screen';
+  static String id = 'registration_screen';
+
   @override
   _RegistrationScreenState createState() => _RegistrationScreenState();
 }
 
 class _RegistrationScreenState extends State<RegistrationScreen> {
-
   final _auth = FirebaseAuth.instance;
   bool showSpinner = false;
-  String email;
-  String password;
+  late String email;
+  late String password;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -54,11 +55,13 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                     borderRadius: BorderRadius.all(Radius.circular(32.0)),
                   ),
                   enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.blueAccent, width: 1.0),
+                    borderSide:
+                        BorderSide(color: Colors.blueAccent, width: 1.0),
                     borderRadius: BorderRadius.all(Radius.circular(32.0)),
                   ),
                   focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.blueAccent, width: 2.0),
+                    borderSide:
+                        BorderSide(color: Colors.blueAccent, width: 2.0),
                     borderRadius: BorderRadius.all(Radius.circular(32.0)),
                   ),
                 ),
@@ -70,7 +73,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                 obscureText: true,
                 style: TextStyle(color: Colors.black),
                 onChanged: (value) {
-                  password=value;
+                  password = value;
                 },
                 decoration: InputDecoration(
                   hintText: 'Enter your password',
@@ -81,11 +84,13 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                     borderRadius: BorderRadius.all(Radius.circular(32.0)),
                   ),
                   enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.blueAccent, width: 1.0),
+                    borderSide:
+                        BorderSide(color: Colors.blueAccent, width: 1.0),
                     borderRadius: BorderRadius.all(Radius.circular(32.0)),
                   ),
                   focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.blueAccent, width: 2.0),
+                    borderSide:
+                        BorderSide(color: Colors.blueAccent, width: 2.0),
                     borderRadius: BorderRadius.all(Radius.circular(32.0)),
                   ),
                 ),
@@ -100,22 +105,21 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   borderRadius: BorderRadius.all(Radius.circular(30.0)),
                   elevation: 5.0,
                   child: MaterialButton(
-                    onPressed: () async{
+                    onPressed: () async {
                       setState(() {
                         showSpinner = true;
                       });
-                      try{
-                        final newUser = await _auth.createUserWithEmailAndPassword(email: email, password: password);
-                       if(newUser!=null)
-                         {
-                           Navigator.pushNamed(context, ChatScreen.id);
-                         }
-                       setState(() {
-                         showSpinner= false;
-                       });
-                      }
-
-                      catch(e){
+                      try {
+                        final newUser =
+                            await _auth.createUserWithEmailAndPassword(
+                                email: email, password: password);
+                        if (newUser != null) {
+                          Navigator.pushNamed(context, ChatScreen.id);
+                        }
+                        setState(() {
+                          showSpinner = false;
+                        });
+                      } catch (e) {
                         print(e);
                       }
                     },

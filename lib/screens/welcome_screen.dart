@@ -4,30 +4,28 @@ import 'package:flutter/material.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 
 class WelcomeScreen extends StatefulWidget {
- static String id ='welcome_screen';
+  static String id = 'welcome_screen';
+
   @override
   _WelcomeScreenState createState() => _WelcomeScreenState();
 }
 
-class _WelcomeScreenState extends State<WelcomeScreen> with SingleTickerProviderStateMixin {
-    AnimationController controller;
+class _WelcomeScreenState extends State<WelcomeScreen>
+    with SingleTickerProviderStateMixin {
+  late AnimationController controller;
+
   @override
-  void initState(){
+  void initState() {
     super.initState();
-    controller= AnimationController(
-    duration: Duration(seconds:1),
-    vsync:this,
-      upperBound: 100.0
-    );
+    controller = AnimationController(
+        duration: Duration(seconds: 1), vsync: this, upperBound: 100.0);
 
     controller.forward();
-controller.addListener(() {setState(() {
-
-});
-print(controller.value);});
+    controller.addListener(() {
+      setState(() {});
+      print(controller.value);
+    });
   }
-
-
 
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,20 +45,16 @@ print(controller.value);});
                 Hero(
                   tag: 'logo',
                   child: Container(
-
-
                     child: Image.asset('images/planets11.png'),
-                    height:controller.value,
-
+                    height: controller.value,
                   ),
                 ),
                 Align(
                   alignment: Alignment.center,
                   child: TypewriterAnimatedTextKit(
-                    text:['PLANETMessages'],
+                    text: ['PLANETMessages'],
                     textStyle: TextStyle(
                       color: Colors.lightBlueAccent,
-
                       fontSize: 35.0,
                       fontWeight: FontWeight.w900,
                     ),
@@ -105,8 +99,8 @@ print(controller.value);});
                     'Register',
                   ),
                 ),
-                ),
               ),
+            ),
           ],
         ),
       ),
