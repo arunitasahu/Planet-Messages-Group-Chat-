@@ -65,8 +65,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                     borderRadius: BorderRadius.all(Radius.circular(32.0)),
                   ),
                 ),
-              ),
-              SizedBox(
+              ),SizedBox(
                 height: 2.0,
               ),
               TextField(
